@@ -1,0 +1,76 @@
+{
+  "status": 200,
+  "result": [
+    {
+      "id": "9b1108a20e676be286681db0",
+      "type": "CATEGORY",
+      "resourceId": "681db09b1108a20e676be286",
+      "name": "Video - Thời sự",
+      "label": "MEDIA",
+      "url": "/danh-muc/video-va-thoi-su",
+      "order": 1,
+      "parentId": null,
+      "clickAble": true,
+      "meta": {},
+      "subMenu": [],
+      "isDisplayOnMenu": true
+    },
+    {
+      "id": "686cd12970dc433c9b1fdaee",
+      "name": "Tiến tới đại hội đại biểu toàn quốc lần thứ XIV",
+      "url": "/danh-muc/tien-toi-dai-hoi-dai-bieu-lan-thu-xiv",
+      "type": "CATEGORY",
+      "resourceId": "681db09b1108a20e676be286",
+      "label": "Tiến tới đại hội đại biểu toàn quốc lần thứ XIV",
+      "order": 1,
+      "clickAble": true,
+      "meta": {},
+      "subMenu": [],
+      "isDisplayOnMenu": true,
+      "parentId": "686a473970fc433c9b0a9990"
+    },
+    {
+      "id": "68528202aed684126e707f63",
+      "name": "Kỷ nguyên vươn mình",
+      "isDisplayOnMenu": true,
+      "order": 3,
+      "parentId": "686a473970fc433c9b0a9990",
+      "clickAble": true,
+      "type": "CATEGORY",
+      "resourceId": "681db09b1108a20e676be286",
+      "label": "Kỷ nguyên vươn mình",
+      "url": "/danh-muc/ky-nguyen-vuon-minh",
+      "meta": {},
+      "subMenu": []
+    },
+    {
+      "id": "68522bd6a7c7db463d032693",
+      "name": "Chuyển đổi số",
+      "isDisplayOnMenu": true,
+      "order": 2,
+      "parentId": "686a473970fc433c9b0a9990",
+      "clickAble": true,
+      "type": "CATEGORY",
+      "resourceId": "681db09b1aswa20e676be286",
+      "label": "Chuyển đổi số",
+      "url": "/danh-muc/chuyen-doi-so",
+      "meta": {},
+      "subMenu": []
+    },
+
+    {
+      "id": "681dccd01108a20e676bf6e3",
+      "name": "Hỏi đáp - Góp ý",
+      "isDisplayOnMenu": true,
+      "order": 10,
+      "parentId": "",
+      "clickAble": true,
+      "type": "CATEGORY",
+      "resourceId": "681db09b1aswa20e676be286",
+      "label": "Hỏi đáp - Góp ý",
+      "url": "/danh-muc/ky-nguyen-vuon-minh",
+      "meta": {},
+      "subMenu": []
+    }
+  ]
+}

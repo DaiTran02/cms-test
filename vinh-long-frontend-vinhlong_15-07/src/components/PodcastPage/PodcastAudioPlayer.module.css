@@ -1,0 +1,62 @@
+.progress__bar,
+.volume__bar {
+  --bar-bg: #ffe3d4;
+  --seek-before-width: 0;
+  --seek-before-color: #ffc2a1;
+  --knobby: #3452a5;
+  --selectedKnobby: #26c9c3;
+  appearance: none;
+  background: #fff;
+  border-radius: 20px;
+  position: relative;
+  height: 8px;
+  outline: none;
+  cursor: pointer;
+}
+.podcast-popup .progress__bar,
+.podcast-popup .progress__bar.volume__bar {
+  background: #dad9d9;
+}
+
+.progress__bar::before,
+.volume__bar::before {
+  background: #393939;
+  background-color: #393939;
+  border-radius: 20px;
+  content: '';
+  cursor: pointer;
+  height: 8px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: var(--seek-before-width);
+  z-index: 2;
+}
+
+.progress__bar::-webkit-slider-thumb,
+.volume__bar::-webkit-slider-thumb {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.progress__bar:hover::-webkit-slider-thumb,
+.volume__bar:hover::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  opacity: 1;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  /* border: none; */
+  background-color: #39393939;
+  cursor: pointer;
+  position: relative;
+  margin: -1px 0 0 0;
+  z-index: 3;
+  /* box-sizing: border-box; */
+}
+
+.progress__bar:active::-webkit-slider-thumb,
+.volume__bar:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
