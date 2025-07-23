@@ -12,9 +12,9 @@ npm run build
 # Chạy ứng dụng
 cd "$SOURCE_DIR"
 
-pm2 stop  vinhlongfont || true
+pm2 stop vinhlongfont || true
 pm2 delete vinhlongfont || true
-pm2 start "npx next start -p 3000" --name vinhlongfont
+pm2 start npm --name "vinhlongfont" -- start
 pm2 save
 
 echo "✅ Deployment completed"
