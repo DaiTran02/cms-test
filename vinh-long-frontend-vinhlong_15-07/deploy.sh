@@ -1,29 +1,30 @@
 #!/bin/bash
-set -e
-
 echo "🔄 Starting deployment..."
 
-SOURCE_DIR="/home/jenkins/agent/workspace/Test/vinh-long-frontend-vinhlong_15-07"
+# Load NVM (nếu có dùng NVM)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-if [ ! -d "$SOURCE_DIR" ]; then
-  echo "❌ ERROR: SOURCE_DIR không tồn tại: $SOURCE_DIR"
-  exit 1
-fi
+# In ra để debug môi trường
+echo "🛠 Node version: $(node -v)"
+echo "🛠 NPM version: $(npm -v)"
+echo "🛠 Whoami: $(whoami)"
+
+# Biến
+SOURCE_DIR="/home/jenkins/agent/workspace/Test/vinh-long-frontend-vinhlong_15-07"
 
 cd "$SOURCE_DIR"
 
 echo "📦 Installing dependencies..."
-npm install --legacy-peer-deps
-
-echo "📦 Installing TypeScript & types..."
-npm install --save-dev typescript @types/react @types/node
+npm install
 
 echo "🔧 Building project..."
 npm run build || { echo "❌ Build failed"; exit 1; }
 
-echo "🚀 Restarting PM2 process..."
-
-pm2 delete vinhlongfont || echo "⚠️ Process vinhlongfont not found, skipping delete"
+echo "🚀 Starting PM2 process..."
+pm2 stop vinhlongfont || true
+pm2 delete vinhlongfont || true
 pm2 start npm --name "vinhlongfont" -- start
 pm2 save
 
